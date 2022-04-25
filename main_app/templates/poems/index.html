@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+<h1>Poem List</h1>
+{% for Poem in Poems %}
+
+<div class="card">
+    <a href="{% url 'detail' Poem.id %}">
+    <div class="card-content row">
+        <div class="col m10">
+        <span class="card-title">{{Poem.name}}</span>
+        <p>Author: {{Poem.author}}</p> 
+        <p>Published: {{Poem.published}}</p>
+    </div>
+    <div class="col m2">
+        <img class="image" src="{{Poem.image}}" style="height: 100px" width="100px">
+    </div>
+    </div>
+</a>
+</div>
+{% endfor %}
+
+
+{% endblock %} 
